@@ -22,22 +22,22 @@
     for (const key in frequencyCounter1) {
       
       if(!(key ** 2 in frequencyCounter2)) {
-        console.log("false")
-        return false
+        console.log("false");
+        return false;
       }
       if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
-        console.log("false")
-        return false
+        console.log("false");
+        return false;
       }
       
     }
-    console.log( frequencyCounter1 )
-    console.log( frequencyCounter2 )
-    console.log("true")
-    return true 
+    console.log( frequencyCounter1 );
+    console.log( frequencyCounter2 );
+    console.log("true");
+    return true;
   }
 
 
-  arr1 = [1, 2, 3, 4, 55]
-  arr2 = [16, 9, 4,1]
-  same(arr1, arr2)
+  arr1 = [1, 2, 3, 4, 55];
+  arr2 = [16, 9, 4,1];
+  same(arr1, arr2);
