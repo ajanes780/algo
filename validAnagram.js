@@ -1,4 +1,3 @@
-
 // -- Anagram checker -- //
 
 function validAnagram(arg1, arg2 ){
@@ -43,4 +42,45 @@ return true
   validAnagram("rat", "car") // false) // false
   validAnagram(' awesome','awesom')// false
   validAnagram('amanaplanacanalpanama',' acanalmanplanpamana')//false
+  
+
+
+  //   other method to check 
+  const validAnagram2 = (arg1, arg2) => {
+    const lookUpObject = {};
+
+    if(arg1.length !== arg2.length){
+      console.log("failed length check");
+      return false 
+    }
+
+      
+    for (let x = 0; x < arg1.length; x++) {
+      const letter = arg1[x];
+      lookUpObject[letter] ? lookUpObject[letter] += 1 : lookUpObject[letter] = 1
+    }
+
+    for (let x = 0; x < arg2.length; x++) {
+      const letter = arg2[x];
+      
+      if(!lookUpObject[letter]){
+        console.log("current letter is not found ")
+        return false
+      }else{
+        lookUpObject[letter] -= 1
+      }
+    }
+
+    return true
+  }
+
+
+
+  validAnagram2("", "")// true
+  validAnagram2("aaa", "aaa") // true 
+  validAnagram2(' aaz' , 'zza') // false;
+  validAnagram2('anagram', 'nagaram') // true
+  validAnagram2("rat", "car") // false) // false
+  validAnagram2(' awesome','awesom')// false
+  validAnagram2('amanaplanacanalpanama',' acanalmanplanpamana')//false
   
