@@ -1,5 +1,6 @@
-// -- Anagram checker -- //
-
+//////////////////////////
+//-- Anagram checker --//
+////////////////////////
 function validAnagram(arg1, arg2 ){
   
   if(arg1.length !== arg2.length){
