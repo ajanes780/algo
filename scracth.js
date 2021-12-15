@@ -1,34 +1,24 @@
 
-const sameFrequency = (arg1, arg2) =>{
+const areThereDuplicates = (...arg) =>{
+console.log(`arg`, arg)
+  let leftPointer = 0 ;
+//  pointer starts on the left  and moves pointer to the right to check for a match if no match move left pointer to the right one space 
+  for (let x = 1 ; x < arg.length; x++){
 
-  const element1 = arg1.toString()
-  const element2 = arg2.toString()
-
-  if (element1.length !== element2.length) return false 
-
-  let counter1 = {}
-  let counter2 = {}
-  for (const letter of element1) {
-  
-    counter1[letter] =  (counter1[letter] || 0  )  +1
+    if( arg[leftPointer] !== arg[x]){
+      leftPointer++
+    } else if(arg[leftPointer] === arg[x]){
+     
+      console.log(`true`)
+      console.log(`arg[leftPointer]:${arg[leftPointer]} , arg[x]:${arg[x]}`,)
+      return true 
+    } 
   }
-  for (const letter of element2) {
-    counter2[letter] =  (counter2[letter] || 0 ) +1
-  }
-  
-  for (const key in counter1) {
-    if(!(key in counter2)){
-      return false
-    }
-
-    if (counter2[key] !== counter1[key]){
-      return false
-    }
-
-  }
-  console.log("true");
-  return true 
 }
 
 
-sameFrequency(182,281)
+// areThereDuplicates(1, 2 ,3 , 4 , 4 ) //true
+// areThereDuplicates(1, 2, 1, 5)
+//tru
+// areThereDuplicates(3,5,6,3,9, 1)
+areThereDuplicates("a", "b", "c" , "c" ,"z")
