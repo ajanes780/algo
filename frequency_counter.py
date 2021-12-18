@@ -23,19 +23,24 @@ def same(arg1, arg2):
   print(frequencyCounter1)
   print(frequencyCounter2)
 
-  for key in frequencyCounter1.keys():
-    if key not in frequencyCounter2.keys():
-      print("key not found")
-      return False
+  # for key in frequencyCounter1.keys():
+  #   if key not in frequencyCounter2.keys():
+  #     print("key not found")
+  #     return False
 
-  for value in frequencyCounter1.values():
-    if value not in frequencyCounter2.values():
-      print("value not found")
-      return False
+  # for value in frequencyCounter1.values():
+  #   if value not in frequencyCounter2.values():
+  #     print("value not found")
+  #     return False
 
-  print("Strings match")
-  return True
+  if frequencyCounter1 == frequencyCounter2:
+    print("Strings match")
+    return True
+  else:
+    print("strings do not match")
+    return False
 
 
-# same("hello", "hello")  # true
-# same("helli", "hello") # key not found false
+same("hello", "hello")  # true
+same("helli", "hello")  # key not found false
+same("llohe", "ellho")  # true
